@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DPH</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style type="text/css" media="screen">
+    .paint-canvas,
+    .graph-canvas {
+      display: block;
+      border: 1px solid #ced4da;
+      border-radius: .2rem;
+      box-sizing: border-box;
+    }
+    .paint-canvas {
+      border-top-color: black;
+      border-top-width: 2px;
+      border-left-color: black;
+      border-left-width: 2px;
+    }
+
+    .scale {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h3 class="font-weight-light">Дискретное преобразование Хартли</h3>
+      </div>
+    </div>
+  </main>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-12">
+        <form>
+          <div class="form-group row">
+            <label for="g" class="col-sm-3 col-form-label text-right">Точки</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control is-valid" id="result" placeholder="{(x1, y1), (x2, y2),...,(xn, yn)}" value="">
+              <div class="valid-feedback" id="resultN">&nbsp;</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-6">
+        <canvas id="canvas" class="paint-canvas mx-auto" width="450" height="287"></canvas>
+      </div>
+      <div class="col-6">
+        <canvas id="resultCanvas" class="paint-canvas mx-auto" width="450" height="287"></canvas>
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <div class="container mt-3">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-6 text-right">
+        Степень сжатия:
+      </div>
+      <div class="col-6">
+        <input type="range" min="1" max="100" value="0" class="scale" id="scale">
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <div class="container mt-3">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" onclick="window.location.reload()">Очистить</button>
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <div class="container mt-3">
+    <div id="output"></div>
+  </div> <!-- /container -->
+
+  <script src="js/DPH.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/dec-adjustment.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/draw.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
